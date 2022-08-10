@@ -7,7 +7,7 @@ class ChatChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
   end
 
-  def chat(data)
+  def receive(data)
     Message.create!(body: data['message'])
   end
 end
