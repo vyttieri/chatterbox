@@ -15,5 +15,9 @@ export default function createChatChannel(addMessage) {
       // Called when there's incoming data on the websocket for this channel
       addMessage(data.message)
     },
+
+    disconnect() {
+      consumer.disconnect()
+    },
   })
 }

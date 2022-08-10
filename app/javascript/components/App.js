@@ -21,12 +21,17 @@ class App extends React.Component {
 		this.chatChannel.send({ message: message })
 	}
 
+	// Disconnect Websockets connection before window closes
+	handleUnload = (e) => this.chatChannel.disconnect()
+
 	componentDidMount = () => {
 		fetch('/messages')
 			.then(response => response.json())
 			.then(data => {
 				this.setState({ messages: data['messages'] })
 			})
+
+		window.addEventListener('beforeunload', this.handleUnload)
 	}
 
 	render() {

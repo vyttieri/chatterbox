@@ -15,5 +15,3 @@ pin "htm", to: "https://ga.jspm.io/npm:htm@3.1.1/dist/htm.module.js"
 
 pin_all_from 'app/javascript/components', under: 'components'
 pin_all_from "app/javascript/helpers", under: "helpers"
-
-pin "prop-types", to: "https://ga.jspm.io/npm:prop-types@15.8.1/index.js"
